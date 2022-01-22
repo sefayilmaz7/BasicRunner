@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject fail;
     public GameObject currentScoreBar;
     public GameObject totalScoreBar;
+    public GameObject healthBar;
     public Text currentLevel;
     public Text healthText;
     public Text currentLevelScore;
@@ -38,6 +39,7 @@ public class UIManager : MonoBehaviour
     {
         healthText.text = PlayerValues.instance.Health.ToString();
         currentLevelScore.text = PlayerValues.instance.CurrentScore.ToString();
+        totalScore.text = PlayerValues.totalScore.ToString();
     }
 
     private void OnEnable()
@@ -57,16 +59,34 @@ public class UIManager : MonoBehaviour
     void ShowFailScreen() 
     {
         fail.SetActive(true);
+        currentScoreBar.transform.position = healthBar.transform.position;
+        healthBar.SetActive(false);
     }
 
     void ShowWinScreen() 
     {
         complete.SetActive(true);
+        currentScoreBar.transform.position = healthBar.transform.position;
+        healthBar.SetActive(false);
+        StartCoroutine(TransferScore());
     }
 
     void ShowInGameUI() 
     {
         totalScoreBar.SetActive(false);
         currentScoreBar.SetActive(true);
+    }
+
+    private IEnumerator TransferScore() 
+    {
+        yield return new WaitForSeconds(0.5f);
+        var iterationCount = PlayerValues.instance.CurrentScore;
+
+        for (int i = 0; i < iterationCount; i++)
+        {
+            PlayerValues.instance.CurrentScore--;
+            PlayerValues.totalScore++;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
