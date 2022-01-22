@@ -49,12 +49,12 @@ public class GameManagerEditor : Editor
         if (GUILayout.Button("Win" , EditorStyles.miniButton)) 
         {
             LevelManager.levelIndex++;
-            UIManager.instance.Complete.SetActive(true);
+            UIManager.instance.complete.SetActive(true);
         }
 
         if (GUILayout.Button("Fail" , EditorStyles.miniButton))
         {
-            UIManager.instance.Fail.SetActive(true);
+            UIManager.instance.fail.SetActive(true);
         }
 
         if (GUILayout.Button("Restart" , EditorStyles.miniButton))

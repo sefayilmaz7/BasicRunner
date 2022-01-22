@@ -7,8 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance = null;
 
-    public GameObject Complete;
-    public GameObject Fail;
+    public GameObject complete;
+    public GameObject fail;
     public Text currentLevel;
 
     private void Awake()
@@ -21,6 +21,33 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        currentLevel.text = "LEVEL " + (PlayerPrefs.GetInt("level") > 0 ? PlayerPrefs.GetInt("level") : LevelManager.levelIndex).ToString();
+        SetLevelTexts();
+    }
+
+    void SetLevelTexts() 
+    {
+        currentLevel.text = "LEVEL " + (PlayerPrefs.GetInt("level") + 1).ToString();
+    }
+
+    private void OnEnable()
+    {
+        EventManager.onGameFailed += ShowFailScreen;
+        EventManager.onGameFinished += ShowWinScreen;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onGameFailed -= ShowFailScreen;
+        EventManager.onGameFinished -= ShowWinScreen;
+    }
+
+    void ShowFailScreen() 
+    {
+        fail.SetActive(true);
+    }
+
+    void ShowWinScreen() 
+    {
+        complete.SetActive(true);
     }
 }

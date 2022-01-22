@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SwerveInputSystem : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
     private float _lastFrameFingerPositionX;
     private float _moveFactorX;
@@ -16,7 +16,6 @@ public class SwerveInputSystem : MonoBehaviour
         {
             _moveFactorX = Input.mousePosition.x - _lastFrameFingerPositionX;
             _lastFrameFingerPositionX = Input.mousePosition.x;
-
         }
     }
 
