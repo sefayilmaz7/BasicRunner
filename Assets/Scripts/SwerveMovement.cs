@@ -8,7 +8,7 @@ public class SwerveMovement : MonoBehaviour
     // Creating instance for accesing it from everywhere
     public static SwerveMovement instance = null;
     #region Variables
-    private PlayerInput _swerveInputSystem;
+    private PlayerInput playerInput;
     [SerializeField] private float swerveSpeed = 0.5f;
     [SerializeField] private float maxSwerveAmount = 1f;
     [HideInInspector] public bool canMove = false;
@@ -17,7 +17,7 @@ public class SwerveMovement : MonoBehaviour
 
     private void Awake()
     {
-        _swerveInputSystem = GetComponent<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();
 
         if (instance == null)
             instance = this;
@@ -46,7 +46,7 @@ public class SwerveMovement : MonoBehaviour
         {
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.4f, 1.03f), transform.position.y, transform.position.z);
 
-            float swerveAmount = Time.fixedDeltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
+            float swerveAmount = Time.fixedDeltaTime * swerveSpeed * playerInput.MoveFactorX;
             swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
 
             var smoothSwerveAmount = Mathf.Lerp(0, swerveAmount, 0.128f);

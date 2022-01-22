@@ -27,6 +27,12 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (PlayerValues.instance.Health == 0)
+            EventManager.FailGameWithEvent();
+    }
+
     public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

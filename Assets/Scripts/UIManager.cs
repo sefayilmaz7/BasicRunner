@@ -9,7 +9,12 @@ public class UIManager : MonoBehaviour
 
     public GameObject complete;
     public GameObject fail;
+    public GameObject currentScoreBar;
+    public GameObject totalScoreBar;
     public Text currentLevel;
+    public Text healthText;
+    public Text currentLevelScore;
+    public Text totalScore;
 
     private void Awake()
     {
@@ -29,16 +34,24 @@ public class UIManager : MonoBehaviour
         currentLevel.text = "LEVEL " + (PlayerPrefs.GetInt("level") + 1).ToString();
     }
 
+    private void Update()
+    {
+        healthText.text = PlayerValues.instance.Health.ToString();
+        currentLevelScore.text = PlayerValues.instance.CurrentScore.ToString();
+    }
+
     private void OnEnable()
     {
         EventManager.onGameFailed += ShowFailScreen;
         EventManager.onGameFinished += ShowWinScreen;
+        EventManager.onGameStarted += ShowInGameUI;
     }
 
     private void OnDisable()
     {
         EventManager.onGameFailed -= ShowFailScreen;
         EventManager.onGameFinished -= ShowWinScreen;
+        EventManager.onGameStarted -= ShowInGameUI;
     }
 
     void ShowFailScreen() 
@@ -49,5 +62,11 @@ public class UIManager : MonoBehaviour
     void ShowWinScreen() 
     {
         complete.SetActive(true);
+    }
+
+    void ShowInGameUI() 
+    {
+        totalScoreBar.SetActive(false);
+        currentScoreBar.SetActive(true);
     }
 }
