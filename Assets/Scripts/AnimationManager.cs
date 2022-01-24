@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator playerAnimator;
+
+    private void OnEnable()
     {
-        
+        EventManager.onGameStarted += StartRunning;
+        EventManager.onGameFailed += BackToIdle;
+        EventManager.onGameFinished += StartVictory;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        EventManager.onGameStarted -= StartRunning;
+        EventManager.onGameFailed -= BackToIdle;
+        EventManager.onGameFinished -= StartVictory;
+    }
+
+    void StartRunning() 
+    {
+        playerAnimator.SetTrigger("Run");
+    }
+
+    void StartVictory() 
+    {
+        playerAnimator.SetTrigger("Win");
+    }
+
+    void BackToIdle() 
+    {
+        playerAnimator.SetTrigger("Fail");
     }
 }
