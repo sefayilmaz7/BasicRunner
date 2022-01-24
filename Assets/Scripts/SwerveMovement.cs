@@ -44,7 +44,7 @@ public class SwerveMovement : MonoBehaviour
     {
         if (canMove)
         {
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.4f, 1.03f), transform.position.y, transform.position.z);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.5f, 1.5f), transform.position.y, transform.position.z);
 
             float swerveAmount = Time.fixedDeltaTime * swerveSpeed * playerInput.MoveFactorX;
             swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
