@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
         complete.SetActive(true);
         currentScoreBar.transform.position = healthBar.transform.position;
         healthBar.SetActive(false);
+        totalScoreBar.SetActive(true);
         StartCoroutine(TransferScore());
     }
 

@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void CollectDiamond(GameObject collidedObject) 
     {
-        
+        GameObject particle = ObjectPool.instance.GetPooledObject();
+        if (particle != null)
+        {
+            particle.transform.position = collidedObject.transform.position;
+            particle.SetActive(true);
+            particle.GetComponent<ParticleSystem>().Play();
+        }
+        Destroy(collidedObject);
+        StartCoroutine(WaitAndDisableObject(particle));
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private IEnumerator WaitAndDisableObject(GameObject objectToDisable) 
     {
-        
+        yield return new WaitForSeconds(2);
+        objectToDisable.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Collectable")) 
+        {
+            CollectDiamond(other.gameObject);
+            EventManager.DiamondCollectWithEvent();
+        }
+
+        else if (other.CompareTag("Obstacle")) 
+        {
+            EventManager.HitObstacleWithEvent();
+        }
+
+        else if (other.CompareTag("Finish")) 
+        {
+            EventManager.FinishGameWithEvent();
+        }
     }
 }

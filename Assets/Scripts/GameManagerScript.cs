@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour
 {
     public static GameManagerScript instance = null;
+    private bool isGameStarted = false;
 
     private void Awake()
     {
@@ -21,17 +22,12 @@ public class GameManagerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButton(0)) 
+        if (Input.GetMouseButton(0) && !isGameStarted) 
         {
+            isGameStarted = true;
             EventManager.StartGameWithEvent();
         }
     }
-
-    //private void Update()
-    //{
-    //    if (PlayerValues.instance.Health == 0)
-    //        EventManager.FailGameWithEvent();
-    //}
 
     public void Reload()
     {
