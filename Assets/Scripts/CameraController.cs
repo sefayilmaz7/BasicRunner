@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
             var newPos = transform.position = playerTransform.position - offset;
             Vector3 smoothPosition = Vector3.Lerp(transform.position, newPos, 0.1f);
             smoothPosition.y = staticPositionY;
-            gameObject.transform.position = smoothPosition; 
+            gameObject.transform.position = smoothPosition;
         }
     }
 
@@ -47,8 +47,19 @@ public class CameraController : MonoBehaviour
 
     void SetCameraToFinishScene() 
     {
-        cameraFollow = false;
-        transform.position = Vector3.Lerp(transform.position , transform.position + new Vector3(0,0,4) , 1);
-        transform.rotation = Quaternion.Lerp(transform.rotation , Quaternion.Euler(0,180,0) , 1);
+        StartCoroutine(MoveCameraByTime(0));
     }
+
+    private IEnumerator MoveCameraByTime(float time) 
+    {
+        cameraFollow = false;
+        while (time < 1)
+        {
+            time += Time.deltaTime;
+            transform.position += new Vector3(0,0,0.08f);
+            transform.Rotate(new Vector3(0,1.1f,0) , Space.Self);
+            yield return null;
+        }
+    }
+
 }
