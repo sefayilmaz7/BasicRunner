@@ -7,14 +7,18 @@ public class CameraController : MonoBehaviour
     [SerializeField] Vector3 offset;
     [SerializeField] private GameObject damageEffect;
     private float staticPositionY = 2.49f;
+    private bool cameraFollow = true;
 
 
     private void LateUpdate()
     {
-        var newPos = transform.position = playerTransform.position - offset;
-        Vector3 smoothPosition = Vector3.Lerp(transform.position , newPos , 0.1f);
-        smoothPosition.y = staticPositionY;
-        gameObject.transform.position = smoothPosition;
+        if (cameraFollow)
+        {
+            var newPos = transform.position = playerTransform.position - offset;
+            Vector3 smoothPosition = Vector3.Lerp(transform.position, newPos, 0.1f);
+            smoothPosition.y = staticPositionY;
+            gameObject.transform.position = smoothPosition; 
+        }
     }
 
     private void OnEnable()
@@ -43,6 +47,8 @@ public class CameraController : MonoBehaviour
 
     void SetCameraToFinishScene() 
     {
-        // I'll edit camera movement for this
+        cameraFollow = false;
+        transform.position = Vector3.Lerp(transform.position , transform.position + new Vector3(0,0,4) , 1);
+        transform.rotation = Quaternion.Lerp(transform.rotation , Quaternion.Euler(0,180,0) , 1);
     }
 }

@@ -10,6 +10,7 @@ public class PlayerValues : MonoBehaviour
     private int health = 3;
     public int CurrentScore { get { return currentScore; } set { currentScore = value; } }
     public int Health { get { return health; } set { health = value; } }
+    [Header("Money for each diamond")]
     [SerializeField] private int collectableValue = 1;
 
 
