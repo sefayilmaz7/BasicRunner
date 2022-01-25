@@ -496,8 +496,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  objectToPool: {fileID: 0}
-  amountToPool: 0
+  objectToPool: {fileID: 8363946726729050366, guid: 793e67641ee879b4cbf478b69f6564fc, type: 3}
+  amountToPool: 5
 --- !u!1 &187654798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1049,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d17b542ca065d594e8f21b16673bf1b8, type: 3}
   m_PrefabInstance: {fileID: 1180280912}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &636022266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636022259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4007f18fb38d384e9d1b17f7a65cc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &702183432
 GameObject:
   m_ObjectHideFlags: 0
