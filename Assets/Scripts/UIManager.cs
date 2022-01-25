@@ -81,6 +81,7 @@ public class UIManager : MonoBehaviour
     private IEnumerator TransferScore() 
     {
         yield return new WaitForSeconds(0.5f);
+        totalScore.color = Color.green;
         var iterationCount = PlayerValues.instance.CurrentScore;
 
         for (int i = 0; i < iterationCount; i++)
@@ -89,5 +90,6 @@ public class UIManager : MonoBehaviour
             PlayerValues.totalScore++;
             yield return new WaitForSeconds(0.1f);
         }
+        totalScore.color = Color.white;
     }
 }
