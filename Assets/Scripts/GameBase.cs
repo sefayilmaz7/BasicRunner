@@ -41,11 +41,6 @@ public class GameBase : EditorWindow
 
         GUILayout.Space(15);
 
-        GUILayout.Label(" UIManager tüm UI'lar çalýþýr halde kullanýma\nsunulmaktadýr. Tek yapmanýz gereken oyununuzun win olacaðý yerde \nGameManager.instance.WaitAndShowSucces()" +
-            "metodunu , \nfail olmasý gereken yerde de\nGameManager.instance.WaitAndShowFail() metodunu \nçaðýrmak olacaktýr.", simpleText);
-
-        GUILayout.Space(15);
-
         GUILayout.Label("Aþaðýdaki butona týklayarak levellar için \ngerekli boþ objelerinizi oluþturabilirsiniz" , simpleText);
 
         GUILayout.Space(10);

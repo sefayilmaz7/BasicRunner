@@ -714,3 +714,31 @@ System memory in use after: 62.4 MB.
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1677.
 Total: 1.916300 ms (FindLiveObjects: 0.150000 ms CreateObjectMapping: 0.046200 ms MarkObjects: 1.681400 ms  DeleteObjects: 0.037500 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000792 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.875 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1124 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.3 MB.
+System memory in use after: 62.4 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1680.
+Total: 4.023500 ms (FindLiveObjects: 0.232500 ms CreateObjectMapping: 0.117600 ms MarkObjects: 3.655600 ms  DeleteObjects: 0.015000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 480.863219 seconds.
+  path: Assets/Scripts/GameBase.cs
+  artifactKey: Guid(bc64357314c781a4b859a2e3ad296f3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameBase.cs using Guid(bc64357314c781a4b859a2e3ad296f3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b27f70f9bdb93381069e99d8d6c178ad') in 0.009872 seconds
+  Import took 0.012253 seconds .
+
