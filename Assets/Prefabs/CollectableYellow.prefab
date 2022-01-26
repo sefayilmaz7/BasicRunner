@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5302122353765035451}
   - component: {fileID: 5309857240217362531}
   - component: {fileID: 5323766468694231875}
+  - component: {fileID: 5498222094131286684}
   m_Layer: 0
   m_Name: CollectableYellow
   m_TagString: Collectable
@@ -95,3 +96,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48118803, y: 0.49706, z: 0.48760203}
   m_Center: {x: -0.0000006556511, y: -0.072876394, z: 0.0000005364418}
+--- !u!95 &5498222094131286684
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323919844958072241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78b402d5473c87840825303917a86996, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

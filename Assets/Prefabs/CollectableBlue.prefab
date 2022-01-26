@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8367001230118180450}
   - component: {fileID: 8374729928304972384}
   - component: {fileID: 8388150141155923778}
+  - component: {fileID: 7197904107124287429}
   m_Layer: 0
   m_Name: CollectableBlue
   m_TagString: Collectable
@@ -95,3 +96,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.427722, y: 0.64000005, z: 0.433424}
   m_Center: {x: 0, y: 0, z: 0.000000007450581}
+--- !u!95 &7197904107124287429
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388868676817389730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78b402d5473c87840825303917a86996, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
