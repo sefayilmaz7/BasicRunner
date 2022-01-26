@@ -39,6 +39,7 @@ public class PlayerCollision : MonoBehaviour
 
         else if (other.CompareTag("Finish")) 
         {
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
             EventManager.FinishGameWithEvent();
         }
     }
