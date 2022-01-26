@@ -53,27 +53,27 @@ public class LevelManagerEditor : Editor
 
         if (GUILayout.Button("1", EditorStyles.miniButton))
         {
+            PlayerPrefs.SetInt("level", 0);
+            GameManagerScript.instance.Reload();
+        }
+        else if (GUILayout.Button("2", EditorStyles.miniButton))
+        {
             PlayerPrefs.SetInt("level", 1);
             GameManagerScript.instance.Reload();
         }
-        if (GUILayout.Button("2", EditorStyles.miniButton))
+        else if (GUILayout.Button("3", EditorStyles.miniButton))
         {
             PlayerPrefs.SetInt("level", 2);
             GameManagerScript.instance.Reload();
         }
-        if (GUILayout.Button("3", EditorStyles.miniButton))
+        else if (GUILayout.Button("4", EditorStyles.miniButton))
         {
             PlayerPrefs.SetInt("level", 3);
             GameManagerScript.instance.Reload();
         }
-        if (GUILayout.Button("4", EditorStyles.miniButton))
+        else if (GUILayout.Button("5", EditorStyles.miniButton))
         {
             PlayerPrefs.SetInt("level", 4);
-            GameManagerScript.instance.Reload();
-        }
-        if (GUILayout.Button("5", EditorStyles.miniButton))
-        {
-            PlayerPrefs.SetInt("level", 5);
             GameManagerScript.instance.Reload();
         }
 
