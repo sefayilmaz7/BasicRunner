@@ -56,8 +56,8 @@ public class CameraController : MonoBehaviour
         while (time < 1)
         {
             time += Time.deltaTime;
-            transform.position += new Vector3(0,0,0.08f);
-            transform.Rotate(new Vector3(0,1.1f,0) , Space.Self);
+            transform.position += new Vector3(0,0,0.05f);
+            transform.Rotate(new Vector3(0,1f,0) , Space.Self);
             yield return null;
         }
     }
