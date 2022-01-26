@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
@@ -22,7 +23,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButton(0) && !isGameStarted) 
+        if (Input.GetMouseButton(0) && !isGameStarted && !EventSystem.current.IsPointerOverGameObject()) 
         {
             isGameStarted = true;
             EventManager.StartGameWithEvent();

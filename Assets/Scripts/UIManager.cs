@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject currentScoreBar;
     public GameObject totalScoreBar;
     public GameObject healthBar;
+    public GameObject shop;
     public Text currentLevel;
     public Text healthText;
     public Text currentLevelScore;
@@ -74,6 +75,7 @@ public class UIManager : MonoBehaviour
 
     void ShowInGameUI() 
     {
+        shop.SetActive(false);
         totalScoreBar.SetActive(false);
         currentScoreBar.SetActive(true);
     }
