@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
             if (i == PlayerPrefs.GetInt("level"))
             {
                 // skip this one
+                element.SetActive(true);
                 continue;
             }
 
