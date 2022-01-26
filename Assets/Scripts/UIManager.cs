@@ -9,14 +9,15 @@ public class UIManager : MonoBehaviour
 
     public GameObject complete;
     public GameObject fail;
-    public GameObject currentScoreBar;
-    public GameObject totalScoreBar;
-    public GameObject healthBar;
-    public GameObject shop;
-    public Text currentLevel;
-    public Text healthText;
-    public Text currentLevelScore;
-    public Text totalScore;
+    [SerializeField] GameObject currentScoreBar;
+    [SerializeField] GameObject totalScoreBar;
+    [SerializeField] GameObject healthBar;
+    [SerializeField] GameObject shop;
+    [SerializeField] GameObject dragTutorial;
+    [SerializeField] Text currentLevel;
+    [SerializeField] Text healthText;
+    [SerializeField] Text currentLevelScore;
+    [SerializeField] Text totalScore;
 
     private void Awake()
     {
@@ -75,6 +76,7 @@ public class UIManager : MonoBehaviour
 
     void ShowInGameUI() 
     {
+        dragTutorial.SetActive(false);
         shop.SetActive(false);
         totalScoreBar.SetActive(false);
         currentScoreBar.SetActive(true);

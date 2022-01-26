@@ -23,6 +23,7 @@ public class IncrementalSystem : MonoBehaviour
         if(PlayerValues.totalScore > (int)Items.health) 
         {
             boughtHealthLevel++;
+            PlayerValues.totalScore -= (int)Items.health;
             PlayerValues.instance.Health += boughtHealthLevel;
             gameObject.SetActive(false);
         }
@@ -33,6 +34,7 @@ public class IncrementalSystem : MonoBehaviour
         if (PlayerValues.totalScore > (int)Items.collectValue)
         {
             boughtValueLevel++;
+            PlayerValues.totalScore -= (int)Items.collectValue;
             PlayerValues.instance.CollectableValue += boughtValueLevel;
             gameObject.SetActive(false);
         }
