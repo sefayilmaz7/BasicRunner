@@ -20,7 +20,7 @@ public class IncrementalSystem : MonoBehaviour
 
     public void BuyHealth() 
     {
-        if(PlayerValues.totalScore > (int)Items.health) 
+        if(PlayerValues.totalScore >= (int)Items.health) 
         {
             boughtHealthLevel++;
             PlayerValues.totalScore -= (int)Items.health;
@@ -31,7 +31,7 @@ public class IncrementalSystem : MonoBehaviour
 
     public void BuyCollectValue() 
     {
-        if (PlayerValues.totalScore > (int)Items.collectValue)
+        if (PlayerValues.totalScore >= (int)Items.collectValue)
         {
             boughtValueLevel++;
             PlayerValues.totalScore -= (int)Items.collectValue;
